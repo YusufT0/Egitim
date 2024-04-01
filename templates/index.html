@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araba Fiyat Tahmin Uygulaması</title>
+</head>
+<body>
+    <div>
+        <h1>Araba Fiyat Tahmin Uygulaması</h1>
+        <form action="{{url_for('predict')}}" method="post">
+            <label for="fiyat">0 araç Fiyatı:</label><br>
+            <input type="text" id="fiyat" name="0 araç Fiyatı" required="required"/><br><br>
+            
+            <label for="kilometre">Kilometre:</label><br>
+            <input type="text" id="kilometre" name="Kilometre" required="required"/><br><br>
+            
+            <label for="kullanici">Kaçıncı Kullanıcı:</label><br>
+            <input type="text" id="kullanici" name="Kaçıncı Kullanıcı" required="required"/><br><br>
+            
+            <label for="yas">Araç Yaşı:</label><br>
+            <input type="text" id="yas" name="Araç Yaşı" required="required"/><br><br>
+            
+            <label for="yakit">Yakıt Türü:</label><br>
+            <select id="yakit" name="Yakıt Türü">
+                <option value="Petrol">Petrol</option>
+                <option value="CNG">CNG</option>
+                <option value="Diesel">Diesel</option>
+            </select><br><br>
+        
+            <label for="satici">Satıcı Türü:</label><br>
+            <select id="satici" name="Satıcı Türü">
+                <option value="Individual">Individual</option>
+                <option value="Dealer">Dealer</option>
+            </select><br><br>
+            
+            <label for="vites">Vites Türü:</label><br>
+            <select id="vites" name="Vites Türü">
+                <option value="Automatic">Automatic</option>
+                <option value="Manual">Manual</option>
+            </select><br><br>
+                
+            <input type="submit" value="Tahmin Et"/>
+        </form>
+    </div>
+    <br/>
+    <br/>
+
+    {{prediction_text}}
+
+</body>
+</html>
