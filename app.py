@@ -15,7 +15,7 @@ def predict():
     final_features =  pred.preprocces(features)
     prediction = model.predict(final_features)
 
-    output = round(prediction[0], 2)
+    output = round(prediction[0], 2) * 1000
 
     return render_template('index.html', prediction_text = f"Tahmin edilen araç Fiyatı: {output}")
 
